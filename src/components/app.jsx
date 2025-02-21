@@ -7,9 +7,9 @@ import Testimonial from "./pages/testimonial";
 import Caracteristicas from "./pages/caracteristicas";
 import Sponsors from "./pages/sponsors";
 import FooterSection from "./pages/footerSection";
-import LoadingScreen from './pages/LoadingScreen';  // Import the loading screen
 import Header from "./common/header";
 import Footer from "./common/footer";
+import LoadingScreen from "./pages/loadingScreen";
 
 const Fullpage = () => (
   <ReactFullpage
