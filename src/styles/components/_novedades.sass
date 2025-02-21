@@ -1,0 +1,50 @@
+
+.novedades__grid
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  grid-template-rows: repeat(2, 1fr)
+  gap: 20px
+
+
+.novedades__grid-item
+  display: flex
+  flex-direction: column
+  align-items: center
+  padding: 20px
+  text-align: center
+  border: 1px solid white
+  background-color: #ffffff1e
+  border-radius:10px
+
+  .novedades__grid-item-image
+    margin-bottom: 15px
+    
+    img
+        width: 72px
+
+  .novedades__grid-item-title
+    font-size: 2rem
+    margin-bottom: 10px
+    font-weight: 800
+
+  .novedades__grid-item-text
+    font-size: 1.25rem
+    margin-bottom: 20px
+    color: lightfray
+    font-weight: 200
+
+  .novedades__grid-item-link
+    font-size: 1rem
+    text-decoration: none
+    color: white
+    display: flex
+    align-items: center
+    gap: 5px
+    font-weight: 800
+
+    .novedades__grid-item-link-text
+      margin-right: 5px
+
+    .novedades__grid-item-link-icon
+      width: 16px
+      height: 16px

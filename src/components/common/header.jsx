@@ -5,8 +5,8 @@ const Header = () => {
     });
 
     return (
-        <header>
-            <nav>
+        <header className="header-coyuntura">
+            <nav className="header-coyuntura__nav">
                 <img src="/img/logo-sfvc.svg" alt="" width={100}/>
                 {listaItems.map((item, index) => { // Use "item" instead of "items"
                     return (

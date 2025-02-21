@@ -1,8 +1,9 @@
 import React from 'react';
-import Header from './header';
-import Footer from './footer';
+import { Marquee } from "@devnomic/marquee";
+import "@devnomic/marquee/dist/index.css";
+import { GridVideo } from './gridvideo';
 
-const Section = ({ children, showVideo = true }) => {
+const Section = ({ children, showVideo = false, showGaleria = false }) => {
   return (
     <>  
         <div className="section">
@@ -14,12 +15,15 @@ const Section = ({ children, showVideo = true }) => {
               </video>
             </div>
           )}
+          {showGaleria && (
+            <div className="section__galeria">
+                  <GridVideo />
+            </div>
+          )}
           <div className='section-contenedor'>
-            <Header/>
               <main>
                 {children}
               </main>
-            <Footer/>
           </div>
         </div>
     </>

@@ -2,12 +2,22 @@
 @use './components/flexHome'
 @use './components/slider'
 @use './abstracts/mixins' as * 
+@use './components/_mailer'
+@use './components/_testimonial'
+@use './components/_novedades'
+@use './components/_caracteristicas'
+@use './components/_carousel'
+@use './components/_sponsors'
+@use './components/_footerSection'
+@use './components/_loadingScreen'
+@use './components/_navfooter'
 
 $overlay-color: rgba(0, 0, 0, 0.3)
 $text-shadow : #00305a28
 
 body
   color: whitesmoke
+  font-family: 'Poppins', sans-serif
 
 header, footer
   padding: 8px 0px 8px 0px
@@ -19,6 +29,25 @@ footer > nav
   border: 1px solid lightgray
   border-radius: 10px
   backdrop-filter: blur(10px)
+
+.footer-prueba
+  z-index: 4
+  position: fixed
+  bottom: 60px  // Ensure the footer stays at the bottom of the screen
+  left: 50%  // Center horizontally
+  transform: translateX(-50%)  // Adjust for perfect centering
+  height: 85dvh  // 90% of the viewport height
+  width: 75vw  // 90% of the viewport width
+
+.footer-prueba2
+  width: 100%  // Ensure it takes the full width of the parent
+  height: 100%  // Ensure it takes the full height of the parent
+  background-color: #ffffff1c  // Example background color for visibility
+  display: flex  // If you want to use flexbox layout inside this div
+  justify-content: center  // Center contents horizontally (optional)
+  align-items: center  // Center contents vertically (optional)
+  border-radius: 10px
+
 
 main
   flex: 1
@@ -52,6 +81,22 @@ main
     background-color: $overlay-color
     z-index: 1 
 
+.section__galeria
+  position: absolute 
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 1 
+  overflow: hidden
+
+.section__galeriamarquee
+  width: 100%
+  display: flex
+  align-items: end
+  justify-content: space-between
+  height: 100%
+
 #section-video-background__background-video
   position: absolute
   top: 0
@@ -83,5 +128,78 @@ p
   .section-contenedor
     max-width: 100dvw
 
+  .footer-prueba
+    width: 100dvw
+
 h1, h2 ,h3, p
   text-shadow: 1px 0 $text-shadow, -1px 0 $text-shadow, 0 1px $text-shadow, 0 -1px $text-shadow, 1px 1px $text-shadow, -1px -1px $text-shadow, 1px -1px $text-shadow, -1px 1px $text-shadow
+
+
+
+.gridVideo
+  display: flex
+  height: 100dvh
+  width: 100%
+  padding: 1px
+  gap: 1px
+  background-color: rgba(0, 0, 0, 0.50) 
+
+.gridVideo__div1, .gridVideo__div3
+  display: flex
+  flex: 1
+  height: 100%
+  
+  video
+    height: 100%
+    object-fit: cover
+    border-radius: 4px
+    width: 100%
+
+.gridVideo__div2
+  flex: 2
+  height: 100%
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  grid-template-rows: repeat(8, 1fr)
+  grid-column-gap: 2px
+  grid-row-gap: 2px
+
+.div1
+  grid-area: 1 / 1 / 6 / 2
+
+.div2
+  grid-area: 6 / 1 / 9 / 2
+
+.div3
+  grid-area: 1 / 2 / 4 / 3
+
+.div4
+  grid-area: 4 / 2 / 9 / 3
+
+.div1, .div2, .div3, .div4
+  position: relative
+  overflow: hidden
+  width: 100%
+  height: 100%
+
+  video
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    object-fit: cover
+    border-radius: 5px
+    background-position: center
+    z-index: -1
+
+
+
+.link-screen__container
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 25
+  pointer-events: none  // Disable interaction with the div
